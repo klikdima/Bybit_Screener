@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run bot",
+      "type": "python",
+      "request": "launch",
+      "module": "bot.main",
+      "envFile": "${workspaceFolder}/.env",
+      "env": { "PYTHONPATH": "src" }
+    }
+  ]
+}
