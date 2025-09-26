@@ -6,3 +6,5 @@ __pycache__/
 *.rtf
 .env
 api.env
+.DS_Store
+.DS_Store
