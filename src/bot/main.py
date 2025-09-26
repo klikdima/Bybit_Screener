@@ -3,9 +3,9 @@ import re
 import logging  # ← вот это добавь
 import asyncio
 from telethon import TelegramClient, events
-from signals import find_simple_price_levels
+from .signals import find_simple_price_levels
 from dotenv import load_dotenv
-from signals import (
+from .signals import (
     get_rsi_signal,
     get_all_symbols,
     scan_rsi_extremes,
