@@ -4,7 +4,7 @@ import asyncio
 import logging
 import time
 
-# Убери from bybit_fetch import get_data — если только реально есть этот файл и функция!
+# Убери from .bybit_fetch import get_data — если только реально есть этот файл и функция!
 
 logging.basicConfig(level=logging.INFO, format="[%(asctime)s] %(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)

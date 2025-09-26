@@ -6,8 +6,8 @@ import aiohttp
 import re
 from collections import Counter
 from typing import Optional
-from bybit_fetch import get_data
-from screener_config import (
+from .bybit_fetch import get_data
+from .screener_config import (
     RSI_LOW, RSI_HIGH,
     FUNDING_THRESHOLD, PRICE_THRESHOLD, VOLUME_RATIO_THRESHOLD,
     OI_DELTA_THRESHOLD, IMBALANCE_THRESHOLD, VOLATILITY_THRESHOLD,
@@ -171,7 +171,7 @@ def escape_markdown(text: str) -> str:
 
 # --- Примеры async сканеров ---
 
-from screener_config import PRICE_THRESHOLD
+from .screener_config import PRICE_THRESHOLD
 
 async def scan_price_spikes(price_threshold=PRICE_THRESHOLD):
     symbols = get_all_symbols()
@@ -333,7 +333,7 @@ async def scan_rsi_extremes(return_symbols=False):
         return result, all_extreme_symbols
     return result
 
-from screener_config import FUNDING_THRESHOLD
+from .screener_config import FUNDING_THRESHOLD
 
 async def scan_extreme_funding(threshold=FUNDING_THRESHOLD):
     url = "https://api.bybit.com/v5/market/tickers?category=linear"
@@ -369,7 +369,7 @@ async def scan_extreme_funding(threshold=FUNDING_THRESHOLD):
     return result
 
 
-from screener_config import PRICE_THRESHOLD
+from .screener_config import PRICE_THRESHOLD
 
 async def scan_price_spikes(price_threshold=PRICE_THRESHOLD):
     symbols = get_all_symbols()
@@ -425,7 +425,7 @@ async def scan_volume_spikes(volume_ratio_threshold=3.0):
         result += f"{s}: {v:.2f}x 🔥\n"
     return result
 
-from screener_config import (
+from .screener_config import (
     RSI_LOW, RSI_HIGH,
     FUNDING_THRESHOLD, PRICE_THRESHOLD, VOLUME_RATIO_THRESHOLD,
     OI_DELTA_THRESHOLD, IMBALANCE_THRESHOLD, VOLATILITY_THRESHOLD,
